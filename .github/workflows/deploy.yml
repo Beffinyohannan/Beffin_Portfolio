@@ -1,4 +1,4 @@
-ame: Deploy React + Vite + Three.js
+name: Deploy React + Vite + Three.js
 
 on:
   workflow_dispatch:
