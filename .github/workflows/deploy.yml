@@ -3,8 +3,7 @@ name: Deploy React + vite + three.js
 on:
   workflow_dispatch:
   push:
-      branches:
-              -master
+      branches: [ "master" ]
 
 
 jobs:
@@ -12,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
 
-        steps:
+      steps:
       # Checkout the repository
       - name: Checkout code
         uses: actions/checkout@v3
