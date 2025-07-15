@@ -8,8 +8,8 @@ on:
 
 
 jobs:
-    build-deploy:
-          runs-on: ubuntu-latest
+  build-deploy:
+    runs-on: ubuntu-latest
 
 
           steps:
