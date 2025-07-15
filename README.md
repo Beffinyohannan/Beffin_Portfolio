@@ -6,8 +6,8 @@ Hi! I'm **Beffin Yohannan**, a passionate Full-Stack MERN Developer focused on b
 
 ## 🔍 About Me
 
-🎓 I'm a Full stack Developer,
-💼 Interested in web development, open-source
+ I'm a Full stack Developer,
+💼 Interested in web development, open-source, 
 ⚡ I enjoy building full-stack apps, machine learning models, creative user interfaces
 
 ### 🧰 Tech Stack
