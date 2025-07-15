@@ -1,12 +1,37 @@
-# React + Vite
+# 👋 Welcome to My Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Hi! I'm **[Beffin Yohannan]**, a passionate Full-Stack MERN Developer focused on building impactful, user-centered, and technically sound projects.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔍 About Me
 
-## Expanding the ESLint configuration
+🎓 I'm a Full stack Developer, [currently working]
+💼 Interested in [web development, open-source]  
+⚡ I enjoy building [full-stack apps, machine learning models, creative user interfaces]
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🧰 Tech Stack
+
+- **Languages:** JavaScript, HTML ,C++
+- **Frameworks & Libraries:** React, Node.js, Express, [Add more]
+- **Tools & Platforms:** Git, VS Code, Figma, Docker, [Others]
+- **Other Skills:** UI/UX Design, REST APIs, Tailwind CSS, AWS EC2, AWS Route 53, etc.
+
+---
+
+## ⚙️ Getting Started
+
+To run a project locally:
+
+```bash
+# Clone this repo
+git clone https://github.com/your-username/portfolio.git
+
+# Navigate to the project folder
+cd project-folder
+
+# Install dependencies (if applicable)
+npm install
+
+# Start the project (example for React)
+npm start
