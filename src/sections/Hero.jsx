@@ -57,7 +57,7 @@ function Hero() {
                             Hi, I’m Beffin Yohannan, a developer based in India with a passion for
                             code.
                         </p>
-                        <div className="md:flex gap-5 ">
+                        <div className="flex flex-col md:flex-row gap-5 ">
 
                             <Button
                                 text="See My Work"

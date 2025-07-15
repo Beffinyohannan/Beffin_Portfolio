@@ -76,7 +76,7 @@ function About() {
                                             <img
                                                 src='/img/pic01.jpg'
                                                 alt="Beffiny Yohannan - Full Stack Mern Developer"
-                                                className="w-full h-[600px] object-cover transform transition-all duration-700 group-hover:scale-110"
+                                                className="w-full h-[400px] md:h-[600px] object-cover transform transition-all duration-700 group-hover:scale-110"
                                             />
 
                                             {/* Overlay gradient */}
@@ -146,7 +146,7 @@ function About() {
                                         >
                                             <item.icon className="w-5 h-5 text-purple-400" />
                                             <span className="text-sm text-gray-500">{item.label}:</span>
-                                            <span className="font-medium">{item.value}</span>
+                                            <span className="font-medium w-40 text-wrap">{item.value}</span>
                                         </div>
                                     ))}
                                 </div>

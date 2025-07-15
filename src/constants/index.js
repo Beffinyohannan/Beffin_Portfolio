@@ -38,7 +38,7 @@ const words = [
 
 const counterItems = [
   { value: 2.5, suffix: "+", label: "Years of Experience" },
-  { value: 10, suffix: "+", label: "Satisfied Clients" },
+  { value: 5, suffix: "+", label: "Satisfied Clients" },
   { value: 10, suffix: "+", label: "Completed Projects" },
   { value: 90, suffix: "%", label: "Client Retention Rate" },
 ];
@@ -233,46 +233,47 @@ const expLogos = [
 
 const testimonials = [
   {
-    name: "Esther Howard",
-    mentions: "@estherhoward",
+    name: "Abhinav v",
+    mentions: "@abhinav",
     review:
-      "I can’t say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
-    imgPath: "/images/client1.png",
+      "I can’t say enough good things about Beffin. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
+    // imgPath: "/images/client1.png",
   },
   {
-    name: "Wade Warren",
-    mentions: "@wadewarren",
+    name: "Boodhesh",
+    mentions: "@boodhesh",
     review:
-      "Working with Adrian was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.",
-    imgPath: "/images/client3.png",
+      "Collaborating with Beffin was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
+    // imgPath: "/images/client2.png",
   },
   {
-    name: "Guy Hawkins",
-    mentions: "@guyhawkins",
+    name: "— Rahul Menezes",
+    mentions: "@rahulmenezes",
     review:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    imgPath: "/images/client2.png",
+      "Working with Beffin really helped me grow as a designer. He always took the time to explain the development side clearly and made sure I truly understood things. He is a great full-stack developer, patient, and a strong problem solver. He made a huge difference in our projects, truly a great teammate to have on any product team.",
+    // imgPath: "/images/client3.png",
+  },
+  
+  {
+    name: "Aquin Davis",
+    mentions: "@aquin",
+    review:
+      "Beffin was a pleasure to work with. He turned our outdated website into a fresh, intuitive platform that’s both modern and easy to navigate. Fantastic work overall.",
+    // imgPath: "/images/client5.png",
   },
   {
-    name: "Marvin McKinney",
-    mentions: "@marvinmckinney",
+    name: "Siby P S",
+    mentions: "@siby",
     review:
-      "Adrian was a pleasure to work with. He turned our outdated website into a fresh, intuitive platform that’s both modern and easy to navigate. Fantastic work overall.",
-    imgPath: "/images/client5.png",
+      "Beffin expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional!",
+    // imgPath: "/images/client4.png",
   },
   {
-    name: "Floyd Miles",
-    mentions: "@floydmiles",
+    name: "Roshan Remis",
+    mentions: "@roshan",
     review:
-      "Adrian’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional!",
-    imgPath: "/images/client4.png",
-  },
-  {
-    name: "Albert Flores",
-    mentions: "@albertflores",
-    review:
-      "Adrian was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend and backend dev are top-notch.",
-    imgPath: "/images/client6.png",
+      "Beffin was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend and backend dev are top-notch.",
+    // imgPath: "/images/client6.png",
   },
 ];
 

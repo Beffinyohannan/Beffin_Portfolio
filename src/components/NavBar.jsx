@@ -30,9 +30,17 @@ function NavBar() {
     return (
         <header className={`navbar ${scrolled ? "scrolled" : "not-scrolled"}`}>
             <div className="inner">
-                <a href="#home" className="logo">
-                    Beffin Yohannan
-                </a>
+                <div className="flex gap-2 items-center">
+                    {/* Avatar Circle with Initials */}
+                    <a href="#home" className="logo">
+                        <div className="w-10 h-10 rounded-full bg-gray-700 text-white flex items-center justify-center text-sm font-bold">
+                            BY
+                        </div>
+                    </a>
+                    <a href="#home" className="logo">
+                        Beffin Yohannan
+                    </a>
+                </div>
 
                 <nav className="desktop">
                     <ul>
@@ -50,7 +58,7 @@ function NavBar() {
 
                     <a href="#contact" className="contact-btn group">
                         <div className="inner">
-                            <span>Contact me</span>
+                            <span >Contact me</span>
                         </div>
                     </a>
 
@@ -95,7 +103,7 @@ function NavBar() {
                             <li key={name} className="group">
                                 <a href={link} onClick={() => setMenuOpen(false)}>
                                     {name}
-                                <span className="underline" />
+                                    <span className="underline" />
                                 </a>
                             </li>
                         ))}
