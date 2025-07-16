@@ -6,7 +6,7 @@ function DownloadButton({ text, className, id }) {
     const handleDownload = () => {
         console.log('hai');
 
-        let url = '/document/BeffinYohannan.pdf'
+        let url = `${import.meta.env.BASE_URL}document/BeffinYohannan.pdf`
         saveAs(url, 'BeffinYohannanResume.pdf');
     };
 

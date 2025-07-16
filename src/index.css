@@ -13,6 +13,11 @@ body {
   color: white;
   scroll-behavior: smooth;
   font-family: "Mona Sans", sans-serif;
+  height: 100%;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  touch-action: auto; 
 }
 
 section {
