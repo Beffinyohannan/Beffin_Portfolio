@@ -11,7 +11,7 @@ import Contact from './sections/Contact'
 import Footer from './sections/Footer'
 import About from './sections/About'
 import Services from './sections/Services'
-import { HashRouter, Routes, Route } from 'react-router-dom'
+// import { HashRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
 
