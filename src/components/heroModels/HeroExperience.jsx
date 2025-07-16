@@ -117,11 +117,111 @@
 // }
 
 // export default HeroExperience
+// ---fixxxxedddd
+// import { OrbitControls } from "@react-three/drei";
+// import { Canvas, useFrame } from "@react-three/fiber";
+// import { useMediaQuery } from "react-responsive";
+
+// import HeroLights from "./HeroLights";
+// import Particles from "./Particles";
+// import { Suspense, useRef } from "react"
+// import { SciFiRoom } from "./SciFiRoom";
+// import { ScrollControls, useScroll } from "@react-three/drei";
+
+// function HeroExperience() {
+//     const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+
+//     return (
+//         <Canvas camera={{ position: [0, 0, 15], fov: 45 }}>
+//             <ambientLight intensity={0.2} color="#1a1a40" />
+//             <Suspense fallback={null}>
+//                 {isMobile ? (
+//                     <MobileScene />
+//                 ) : (
+//                     <ScrollControls pages={2} damping={4}>
+//                         <DesktopScene />
+//                     </ScrollControls>
+//                 )}
+//             </Suspense>
+//         </Canvas>
+//     );
+// }
+
+// function DesktopScene() {
+//     const scroll = useScroll();
+//     const groupRef = useRef();
+
+//     useFrame(() => {
+//         const offset = scroll.offset;
+//         if (groupRef.current) {
+//             groupRef.current.rotation.y = offset * Math.PI * 2;
+//             groupRef.current.position.y = -offset * 2;
+//         }
+//     });
+
+//     return (
+//         <>
+//             <OrbitControls
+//                 enablePan={false}
+//                 enableZoom={true}
+//                 maxDistance={6}
+//                 minDistance={1}
+//                 minPolarAngle={Math.PI / 5}
+//                 maxPolarAngle={Math.PI / 2}
+//             />
+//             <HeroLights />
+//             <Particles count={100} />
+//             <group
+//                 ref={groupRef}
+//                 scale={1}
+//                 position={[0, -0.5, 0]}
+//                 rotation={[0, -Math.PI / 100, 0]}
+//             >
+//                 <SciFiRoom />
+//             </group>
+//         </>
+//     );
+// }
+
+// function MobileScene() {
+//     const groupRef = useRef();
+
+//     useFrame((_, delta) => {
+//         if (groupRef.current) {
+//             groupRef.current.rotation.y += delta * 0.5; // smooth auto-rotation
+//         }
+//     });
+
+//     return (
+//         <>
+//             <OrbitControls
+//                 enablePan={false}
+//                 enableZoom={false}
+//                 enableRotate={false}
+//                 maxDistance={6}
+//                 minDistance={1}
+//             />
+//             <HeroLights />
+//             <Particles count={50} />
+//             <group
+//                 ref={groupRef}
+//                 // scale={0.8}
+//                 // position={[0.2, -0.5, 1]}
+//                 // rotation={[0, 0.2, 0]}
+//             >
+//                 <SciFiRoom />
+//             </group>
+//         </>
+//     );
+// }
+
+
+// export default HeroExperience
+
 
 import { OrbitControls } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useMediaQuery } from "react-responsive";
-
 import HeroLights from "./HeroLights";
 import Particles from "./Particles";
 import { Suspense, useRef } from "react"
@@ -130,32 +230,26 @@ import { ScrollControls, useScroll } from "@react-three/drei";
 
 function HeroExperience() {
     const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
-
     return (
-        // <Canvas camera={{ position: [0, 0, 15], fov: 45 }}>
-        //     <ambientLight intensity={0.2} color="#1a1a40" />
-        //     <Suspense fallback={null}>
-        //         {isMobile ? (
-        //             <MobileScene />
-        //         ) : (
-        //             <ScrollControls pages={2} damping={4}>
-        //                 <DesktopScene />
-        //             </ScrollControls>
-        //         )}
-        //     </Suspense>
-        // </Canvas>
-        <div style={{ height: "100vh", width: "100vw", touchAction: "auto" }}>
-            <Canvas camera={{ position: [0, 0, 15], fov: 45 }}>
-                <ambientLight intensity={0.2} color="#1a1a40" />
-
-                <Suspense fallback={null}>
-                    {/* ✅ ScrollControls wrap both mobile and desktop */}
+        <Canvas
+            camera={{ position: [0, 0, 15], fov: 45 }}
+            // Add these props to allow touch events to pass through on mobile
+            style={{
+                touchAction: isMobile ? 'pan-y' : 'none',
+                pointerEvents: isMobile ? 'none' : 'auto'
+            }}
+        >
+            <ambientLight intensity={0.2} color="#1a1a40" />
+            <Suspense fallback={null}>
+                {isMobile ? (
+                    <MobileScene />
+                ) : (
                     <ScrollControls pages={2} damping={4}>
-                        {isMobile ? <MobileScene /> : <DesktopScene />}
+                        <DesktopScene />
                     </ScrollControls>
-                </Suspense>
-            </Canvas>
-        </div>
+                )}
+            </Suspense>
+        </Canvas>
     );
 }
 
@@ -195,64 +289,23 @@ function DesktopScene() {
     );
 }
 
-// function MobileScene() {
-//     const groupRef = useRef();
-
-//     useFrame((_, delta) => {
-//         if (groupRef.current) {
-//             groupRef.current.rotation.y += delta * 0.5; // smooth auto-rotation
-//         }
-//     });
-
-//     return (
-//         <>
-//             <OrbitControls
-//                 enablePan={false}
-//                 enableZoom={false}
-//                 enableRotate={false}
-//                 maxDistance={6}
-//                 minDistance={1}
-//             />
-//             <HeroLights />
-//             <Particles count={50} />
-//             <group
-//                 ref={groupRef}
-//                 scale={0.8}
-//                 position={[0.2, -0.5, 1]}
-//                 rotation={[0, 0.2, 0]}
-//             >
-//                 <SciFiRoom />
-//             </group>
-//         </>
-//     );
-// }
 function MobileScene() {
     const groupRef = useRef();
-    const scroll = useScroll();
 
     useFrame((_, delta) => {
         if (groupRef.current) {
-            // Auto rotation
-            groupRef.current.rotation.y += delta * 0.5;
-
-            const offset = scroll.offset; // from 0 to 1 (scroll progress)
-            groupRef.current.position.y = -offset * 2;
-            groupRef.current.position.x = offset * 1; // add slight right movement too
+            groupRef.current.rotation.y += delta * 0.5; // smooth auto-rotation
         }
     });
 
     return (
         <>
-            <OrbitControls
-                enablePan={false}
-                enableZoom={false}
-                enableRotate={false}
-            />
+            {/* Remove OrbitControls entirely on mobile to avoid any interference */}
             <HeroLights />
             <Particles count={50} />
             <group
                 ref={groupRef}
-                scale={1.5}
+                scale={0.8}
                 position={[0.2, -0.5, 1]}
                 rotation={[0, 0.2, 0]}
             >
@@ -262,4 +315,4 @@ function MobileScene() {
     );
 }
 
-export default HeroExperience
+export default HeroExperience;
