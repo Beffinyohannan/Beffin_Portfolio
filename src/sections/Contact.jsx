@@ -106,14 +106,25 @@ function Contact() {
                                     />
                                 </div>
 
-                                <button type="submit">
+                                {/* <button type="submit">
                                     <div className="cta-button group">
                                         <div className="bg-circle" />
                                         <p className="text text-[14px] md:text-lg">
                                             {loading ? "Sending..." : "Send Message"}
                                         </p>
                                         <div className="arrow-wrapper ">
-                                            {/* <img src="/images/arrow-down.svg" alt="arrow" /> */}
+                                            <img src="/images/arrow-down.svg" alt="arrow" />
+                                            <img src={`${import.meta.env.BASE_URL}images/arrow-down.svg`} alt="arrow" />
+                                        </div>
+                                    </div>
+                                </button> */}
+                                <button type="submit">
+                                    <div className="cta-button-msg group">
+                                        <div className="bg-circle" />
+                                        <p className="text text-[14px] md:text-lg">
+                                            {loading ? "Sending..." : "Send Message"}
+                                        </p>
+                                        <div className="arrow-wrapper">
                                             <img src={`${import.meta.env.BASE_URL}images/arrow-down.svg`} alt="arrow" />
                                         </div>
                                     </div>

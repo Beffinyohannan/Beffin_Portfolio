@@ -4,7 +4,55 @@ import gsap from "gsap";
 import TitleHeader from "../components/TitleHeader";
 import { techStackIcons, techStackImgs } from "../constants";
 import TechIcons from "../components/models/techLogos/TechIcons";
+import React, { Suspense } from "react";
 // import { techStackImgs } from "../constants";
+
+
+// Custom Error Boundary
+class TechIconsErrorBoundary extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { hasError: false, retryKey: 0 };
+    }
+
+    static getDerivedStateFromError(error) {
+        return { hasError: true };
+    }
+
+    componentDidCatch(error, errorInfo) {
+        console.error('TechIcons loading error:', error, errorInfo);
+    }
+
+    handleRetry = () => {
+        this.setState(prev => ({
+            hasError: false,
+            retryKey: prev.retryKey + 1, // force re-render
+        }));
+    };
+
+    render() {
+        if (this.state.hasError) {
+            return (
+                <div className="tech-icon-wrapper">
+                    <div className="tech-icons-error">
+                        <div className="error-icon">⚠️</div>
+                        <span>Failed to load 3D model</span>
+                        <button onClick={this.handleRetry} className="retry-btn">
+                            Retry
+                        </button>
+                    </div>
+                </div>
+            );
+        }
+
+        return (
+            <React.Fragment key={this.state.retryKey}>
+                {this.props.children}
+            </React.Fragment>
+        );
+    }
+}
+
 
 function TechStack() {
     // Animate the tech cards in the skills section
@@ -61,6 +109,25 @@ function TechStack() {
                                 <div className="tech-icon-wrapper">
                                     <TechIcons model={techStackIcon} />
                                 </div>
+
+                                {/* <TechIconsErrorBoundary>
+                                    <Suspense
+                                        fallback={
+                                            <div className="tech-icon-wrapper">
+                                                <div className="tech-icons-loading">
+                                                    <div className="loading-spinner"></div>
+                                                    <span>Loading 3D model...</span>
+                                                </div>
+                                            </div>
+                                        }
+                                    >
+                                        <div className="tech-icon-wrapper">
+                                            <TechIcons model={techStackIcon} />
+                                        </div>
+                                    </Suspense>
+                                </TechIconsErrorBoundary> */}
+
+
                                 {/* The padding-x and w-full classes are used to add horizontal padding to the 
                     text and make it take up the full width of the component. */}
                                 <div className="padding-x w-full">

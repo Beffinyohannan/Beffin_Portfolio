@@ -305,8 +305,8 @@ function MobileScene() {
             <Particles count={50} />
             <group
                 ref={groupRef}
-                scale={0.8}
-                position={[0.2, -0.5, 1]}
+                scale={1.7}
+                position={[0.2, -0.9, 1]}
                 rotation={[0, 0.2, 0]}
             >
                 <SciFiRoom />
