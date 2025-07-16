@@ -109,7 +109,7 @@ function Contact() {
                                 <button type="submit">
                                     <div className="cta-button group">
                                         <div className="bg-circle" />
-                                        <p className="text">
+                                        <p className="text text-sm md:text-lg">
                                             {loading ? "Sending..." : "Send Message"}
                                         </p>
                                         <div className="arrow-wrapper">

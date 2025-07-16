@@ -291,14 +291,14 @@ const testimonials = [
     name: "Abhinav v",
     mentions: "@abhinav",
     review:
-      "I can’t say enough good things about Beffin. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
+      "I can’t say enough good things about Beffin. He was able to take complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
     // imgPath: "/images/client1.png",
   },
   {
     name: "Boodhesh",
     mentions: "@boodhesh",
     review:
-      "Collaborating with Beffin was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
+      "Collaborating with Beffin was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout the project. Beffin is the ideal partner.",
     // imgPath: "/images/client2.png",
   },
   {
@@ -313,21 +313,21 @@ const testimonials = [
     name: "Aquin Davis",
     mentions: "@aquin",
     review:
-      "Beffin was a pleasure to work with. He turned our outdated website into a fresh, intuitive platform that’s both modern and easy to navigate. Fantastic work overall.",
+      "Beffin was a pleasure to work with. He turned outdated website into a fresh, intuitive platform that’s both modern and easy to navigate. Fantastic work overall.",
     // imgPath: "/images/client5.png",
   },
   {
     name: "Siby P S",
     mentions: "@siby",
     review:
-      "Beffin expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional!",
+      "Beffin expertise in web development is truly impressive. He delivered a robust and scalable solution for  e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional!",
     // imgPath: "/images/client4.png",
   },
   {
     name: "Roshan Remis",
     mentions: "@roshan",
     review:
-      "Beffin was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend and backend dev are top-notch.",
+      "Beffin was a pleasure to work with. He understood all requirements perfectly and delivered a website that exceeded all expectations. His skills in both frontend and backend dev are top-notch.",
     // imgPath: "/images/client6.png",
   },
 ];
