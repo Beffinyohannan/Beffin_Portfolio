@@ -1,3 +1,7 @@
+const base = import.meta.env.BASE_URL;
+
+
+
 const navLinks = [
   {
     name: "About",
@@ -25,15 +29,26 @@ const navLinks = [
   },
 ];
 
+// const words = [
+//   { text: "Ideas", imgPath: "/images/ideas.svg" },
+//   { text: "Concepts", imgPath: "/images/concepts.svg" },
+//   { text: "Designs", imgPath: "/images/designs.svg" },
+//   { text: "Code", imgPath: "/images/code.svg" },
+//   { text: "Ideas", imgPath: "/images/ideas.svg" },
+//   { text: "Concepts", imgPath: "/images/concepts.svg" },
+//   { text: "Designs", imgPath: "/images/designs.svg" },
+//   { text: "Code", imgPath: "/images/code.svg" },
+// ];
+
 const words = [
-  { text: "Ideas", imgPath: "/images/ideas.svg" },
-  { text: "Concepts", imgPath: "/images/concepts.svg" },
-  { text: "Designs", imgPath: "/images/designs.svg" },
-  { text: "Code", imgPath: "/images/code.svg" },
-  { text: "Ideas", imgPath: "/images/ideas.svg" },
-  { text: "Concepts", imgPath: "/images/concepts.svg" },
-  { text: "Designs", imgPath: "/images/designs.svg" },
-  { text: "Code", imgPath: "/images/code.svg" },
+  { text: "Ideas", imgPath: `${base}images/ideas.svg` },
+  { text: "Concepts", imgPath: `${base}images/concepts.svg` },
+  { text: "Designs", imgPath: `${base}images/designs.svg` },
+  { text: "Code", imgPath: `${base}images/code.svg` },
+  { text: "Ideas", imgPath: `${base}images/ideas.svg` },
+  { text: "Concepts", imgPath: `${base}images/concepts.svg` },
+  { text: "Designs", imgPath: `${base}images/designs.svg` },
+  { text: "Code", imgPath: `${base}images/code.svg` },
 ];
 
 const counterItems = [
@@ -81,17 +96,20 @@ const logoIconsList = [
 
 const abilities = [
   {
-    imgPath: "/images/seo.png",
+    // imgPath: "/images/seo.png",
+    imgPath: `${base}images/seo.png`,
     title: "Quality Focus",
     desc: "Delivering high-quality results while maintaining attention to every detail.",
   },
   {
-    imgPath: "/images/chat.png",
+    // imgPath: "/images/chat.png",
+    imgPath: `${base}images/chat.png`,
     title: "Reliable Communication",
     desc: "Keeping you updated at every step to ensure transparency and clarity.",
   },
   {
-    imgPath: "/images/time.png",
+    // imgPath: "/images/time.png",
+    imgPath: `${base}images/time.png`,
     title: "On-Time Delivery",
     desc: "Making sure projects are completed on schedule, with quality & attention to detail.",
   },
@@ -138,47 +156,84 @@ const techStackImgs = [
   },
 ];
 
+// const techStackIcons = [
+//   {
+//     name: "React Developer",
+//     modelPath: "/models/react_logo-transformed.glb",
+//     scale: 1,
+//     rotation: [0, 0, 0],
+//   },
+
+//   {
+//     name: "Backend Developer",
+//     modelPath: "/models/node-transformed.glb",
+//     scale: 5,
+//     rotation: [0, -Math.PI / 2, 0],
+//   },
+//   {
+//     name: "Interactive Developing",
+//     modelPath: "/models/three.js-transformed.glb",
+//     scale: 0.05,
+//     rotation: [0, 0, 0],
+//   },
+//   {
+//     name: "Project Managing",
+//     modelPath: "/models/git-svg-transformed.glb",
+//     scale: 0.05,
+//     rotation: [0, -Math.PI / 4, 0],
+//   },
+//   {
+//     name: "AWS EC2, Route 53 ",
+//     modelPath: "/models/aws_logo.glb",
+//     scale: 0.3,
+//     rotation: [0, 0, 0],
+//   },
+// ];
+
 const techStackIcons = [
   {
     name: "React Developer",
-    modelPath: "/models/react_logo-transformed.glb",
+    modelPath: `${base}models/react_logo-transformed.glb`,
     scale: 1,
     rotation: [0, 0, 0],
   },
- 
   {
     name: "Backend Developer",
-    modelPath: "/models/node-transformed.glb",
+    modelPath: `${base}models/node-transformed.glb`,
     scale: 5,
     rotation: [0, -Math.PI / 2, 0],
   },
   {
     name: "Interactive Developing",
-    modelPath: "/models/three.js-transformed.glb",
+    modelPath: `${base}models/three.js-transformed.glb`,
     scale: 0.05,
     rotation: [0, 0, 0],
   },
   {
     name: "Project Managing",
-    modelPath: "/models/git-svg-transformed.glb",
+    modelPath: `${base}models/git-svg-transformed.glb`,
     scale: 0.05,
     rotation: [0, -Math.PI / 4, 0],
   },
-   {
+  {
     name: "AWS EC2, Route 53 ",
-    modelPath: "/models/aws_logo.glb",
+    modelPath: `${base}models/aws_logo.glb`,
     scale: 0.3,
     rotation: [0, 0, 0],
   },
 ];
+
 
 const expCards = [
   {
     review: "Beffin brought creativity and technical expertise to the team, significantly improving our development performance. His work has been invaluable in delivering faster experiences.",
     // imgPath: "/images/exp1.png",
     // logoPath: "/images/logo1.png",
-    imgPath: "/img/metasoftFullLogo.svg",
-    logoPath: "/img/metasoftLogo.png",
+
+    // imgPath: "/img/metasoftFullLogo.svg",
+    // logoPath: "/img/metasoftLogo.png",
+    imgPath: `${base}img/metasoftFullLogo.svg`,
+    logoPath: `${base}img/metasoftLogo.png`,
     title: "Full STack Developer",
     date: "March 2023 - Present",
     responsibilities: [
@@ -253,7 +308,7 @@ const testimonials = [
       "Working with Beffin really helped me grow as a designer. He always took the time to explain the development side clearly and made sure I truly understood things. He is a great full-stack developer, patient, and a strong problem solver. He made a huge difference in our projects, truly a great teammate to have on any product team.",
     // imgPath: "/images/client3.png",
   },
-  
+
   {
     name: "Aquin Davis",
     mentions: "@aquin",
@@ -277,21 +332,39 @@ const testimonials = [
   },
 ];
 
+// const socialImgs = [
+//   {
+//     name: "insta",
+//     imgPath: "/images/insta.png",
+//     link: "https://www.instagram.com/dark_amateur/?utm_source=qr"
+//   },
+//   {
+//     name: "fb",
+//     imgPath: "/images/fb.png",
+//     link: "https://www.facebook.com/beffinyohannan"
+//   },
+//   {
+//     name: "linkedin",
+//     imgPath: "/images/linkedin.png",
+//     link: "http://www.linkedin.com/in/beffin-yohannan"
+//   },
+// ];
+
 const socialImgs = [
   {
     name: "insta",
-    imgPath: "/images/insta.png",
-    link:"https://www.instagram.com/dark_amateur/?utm_source=qr"
+    imgPath: `${base}images/insta.png`,
+    link: "https://www.instagram.com/dark_amateur/?utm_source=qr"
   },
   {
     name: "fb",
-    imgPath: "/images/fb.png",
-    link:"https://www.facebook.com/beffinyohannan"
+    imgPath: `${base}images/fb.png`,
+    link: "https://www.facebook.com/beffinyohannan"
   },
   {
     name: "linkedin",
-    imgPath: "/images/linkedin.png",
-    link:"http://www.linkedin.com/in/beffin-yohannan"
+    imgPath: `${base}images/linkedin.png`,
+    link: "http://www.linkedin.com/in/beffin-yohannan"
   },
 ];
 

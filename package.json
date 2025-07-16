@@ -1,6 +1,6 @@
 {
   "name": "protfolio",
-  "homepage": "https://beffinyohannan.github.io/beffinyohannan_portfolio/",
+  "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -24,7 +24,6 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-responsive": "^10.0.1",
-    "react-router-dom": "^7.6.3",
     "tailwindcss": "^4.1.11",
     "three": "^0.178.0"
   },

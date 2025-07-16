@@ -74,7 +74,8 @@ function About() {
                                     <div className="relative bg-gray-900 rounded-2xl p-2 backdrop-blur-sm border border-gray-800">
                                         <div className="relative overflow-hidden rounded-xl">
                                             <img
-                                                src='/img/pic01.jpg'
+                                                // src='/img/pic01.jpg'
+                                                src={`${import.meta.env.BASE_URL}img/pic01.jpg`}
                                                 alt="Beffiny Yohannan - Full Stack Mern Developer"
                                                 className="w-full h-[400px] md:h-[600px] object-cover transform transition-all duration-700 group-hover:scale-110"
                                             />

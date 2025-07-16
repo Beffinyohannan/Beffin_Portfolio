@@ -56,7 +56,8 @@ function ShowCaseSection() {
                         <div ref={rydeRef} className="first-project-wrapper">
                             <div className="image-wrapper">
                                 {/* <img src="/images/project1.png" alt="Ryde App Interface" /> */}
-                                <img src="/img/project01.jpg" alt="ZEEQR" />
+                                {/* <img src="/img/project01.jpg" alt="ZEEQR" /> */}
+                                <img src={`${import.meta.env.BASE_URL}img/project01.jpg`} alt="ZEEQR" />
                             </div>
                             <div className="text-content">
                                 <a href="https://zeeqr.com/" target="_blank" rel="noopener noreferrer">
@@ -74,8 +75,12 @@ function ShowCaseSection() {
                         <div className="project-list-wrapper overflow-hidden">
                             <div className="project" ref={libraryRef}>
                                 <div className="image-wrapper bg-[#FFEFDB]">
-                                    <img
+                                    {/* <img
                                         src="/images/project2.png"
+                                        alt="Bharat Auction"
+                                    /> */}
+                                    <img
+                                        src={`${import.meta.env.BASE_URL}images/project2.png`}
                                         alt="Bharat Auction"
                                     />
                                 </div>
@@ -84,7 +89,8 @@ function ShowCaseSection() {
 
                             <div className="project" ref={ycDirectoryRef}>
                                 <div className="image-wrapper bg-[#FFE7EB]">
-                                    <img src="/images/project3.png" alt="Hostec" />
+                                    {/* <img src="/images/project3.png" alt="Hostec" /> */}
+                                    <img src={`${import.meta.env.BASE_URL}images/project3.png`} alt="Hostec" />
                                 </div>
                                 <h2>Hostec - Client survey and reporting system</h2>
                             </div>
@@ -93,8 +99,12 @@ function ShowCaseSection() {
                         <div className="project-list-wrapper overflow-hidden">
                             <div className="project" ref={libraryRef}>
                                 <div className="image-wrapper bg-[#FFEFDB]">
-                                    <img
+                                    {/* <img
                                         src="/img/realEstate.jpeg"
+                                        alt="MEA International"
+                                    /> */}
+                                    <img
+                                        src={`${import.meta.env.BASE_URL}img/realEstate.jpeg`}
                                         alt="MEA International"
                                     />
                                 </div>
@@ -103,7 +113,8 @@ function ShowCaseSection() {
 
                             <div className="project" ref={ycDirectoryRef}>
                                 <div className="image-wrapper bg-[#FFE7EB]">
-                                    <img src="/img/church-website.png" alt="Community Website" />
+                                    {/* <img src="/img/church-website.png" alt="Community Website" /> */}
+                                    <img src={`${import.meta.env.BASE_URL}img/church-website.png`} alt="Community Website" />
                                 </div>
                                 <a href="https://www.kannarapalli.com/" target="_blank" rel="noopener noreferrer">
                                     <h2>Kannara church - Community Website</h2>
@@ -113,8 +124,12 @@ function ShowCaseSection() {
                         <div className="project-list-wrapper overflow-hidden">
                             <div className="project" ref={libraryRef}>
                                 <div className="image-wrapper bg-[#FFEFDB]">
-                                    <img
+                                    {/* <img
                                         src="/img/airchip.png"
+                                        alt="airchip"
+                                    /> */}
+                                    <img
+                                        src={`${import.meta.env.BASE_URL}img/airchip.png`}
                                         alt="airchip"
                                     />
                                 </div>
@@ -123,7 +138,8 @@ function ShowCaseSection() {
 
                             <div className="project" ref={ycDirectoryRef}>
                                 <div className="image-wrapper bg-[#FFE7EB]">
-                                    <img src="/img/eventive.png" alt="eventive" />
+                                    {/* <img src="/img/eventive.png" alt="eventive" /> */}
+                                    <img src={`${import.meta.env.BASE_URL}img/eventive.png`} alt="eventive" />
                                 </div>
                                 <h2>Eventive - A event management application like social media</h2>
                             </div>

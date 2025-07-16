@@ -12,7 +12,8 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function GamingDesktop(props) {
-  const { nodes, materials } = useGLTF('/models/gaming_desktop_pc-transformed.glb')
+  // const { nodes, materials } = useGLTF('/models/gaming_desktop_pc-transformed.glb')
+  const { nodes, materials } = useGLTF(`${import.meta.env.BASE_URL}models/gaming_desktop_pc-transformed.glb`)
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Cube_Material_0.geometry} material={materials.Material} position={[-0.61, -0.006, 1.561]} rotation={[-Math.PI / 2, 0, -Math.PI]} scale={[-3.689, 7.316, 0.26]} />
@@ -75,4 +76,5 @@ export function GamingDesktop(props) {
   )
 }
 
-useGLTF.preload('/models/gaming_desktop_pc-transformed.glb')
+// useGLTF.preload('/models/gaming_desktop_pc-transformed.glb')
+useGLTF.preload(`${import.meta.env.BASE_URL}models/gaming_desktop_pc-transformed.glb`)
