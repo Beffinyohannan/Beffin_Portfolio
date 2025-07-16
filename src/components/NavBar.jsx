@@ -56,8 +56,8 @@ function NavBar() {
                 </nav>
                 <div className="flex items-center gap-4">
 
-                    <a href="#contact" className="contact-btn group">
-                        <div className="inner">
+                    <a href="#contact" className="contact-btn group ">
+                        <div className="inner ">
                             <span >Contact me</span>
                         </div>
                     </a>
@@ -65,7 +65,7 @@ function NavBar() {
                     {/* Hamburger Toggle Button */}
                     <button
                         onClick={toggleMenu}
-                        className="lg:hidden p-2 focus:outline-none cursor-pointer"
+                        className="lg:hidden  focus:outline-none cursor-pointer"
                         aria-label="Toggle Menu"
                     >
                         <svg

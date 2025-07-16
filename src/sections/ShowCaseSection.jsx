@@ -80,7 +80,8 @@ function ShowCaseSection() {
                                         alt="Bharat Auction"
                                     /> */}
                                     <img
-                                        src={`${import.meta.env.BASE_URL}images/project2.png`}
+                                        // src={`${import.meta.env.BASE_URL}images/project2.png`}
+                                        src={`${import.meta.env.BASE_URL}img/auction.png`}
                                         alt="Bharat Auction"
                                     />
                                 </div>
@@ -90,7 +91,8 @@ function ShowCaseSection() {
                             <div className="project" ref={ycDirectoryRef}>
                                 <div className="image-wrapper bg-[#FFE7EB]">
                                     {/* <img src="/images/project3.png" alt="Hostec" /> */}
-                                    <img src={`${import.meta.env.BASE_URL}images/project3.png`} alt="Hostec" />
+                                    {/* <img src={`${import.meta.env.BASE_URL}images/project3.png`} alt="Hostec" /> */}
+                                    <img src={`${import.meta.env.BASE_URL}img/survey.png`} alt="Hostec" />
                                 </div>
                                 <h2>Hostec - Client survey and reporting system</h2>
                             </div>

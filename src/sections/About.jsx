@@ -63,7 +63,7 @@ function About() {
                 <div className="relative z-10 container mx-auto px-6 py-16">
                     <div className={`max-w-6xl mx-auto transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
 
-                        <div className="grid lg:grid-cols-2 gap-16 items-center">
+                        <div className="grid lg:grid-cols-2 gap-16 justify-center items-center">
                             {/* Profile Image Section */}
                             <div className="relative group">
                                 <div className="relative transform transition-all duration-500 hover:scale-105">
