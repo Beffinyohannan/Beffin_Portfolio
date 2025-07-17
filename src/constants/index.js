@@ -218,8 +218,10 @@ const techStackIcons = [
   {
     name: "AWS EC2, Route 53 ",
     modelPath: `${base}models/aws_logo.glb`,
-    scale: 0.3,
+    scale: 0.4,
     rotation: [0, 0, 0],
+    position: [0,-2, 0],
+
   },
 ];
 
@@ -232,8 +234,8 @@ const expCards = [
 
     // imgPath: "/img/metasoftFullLogo.svg",
     // logoPath: "/img/metasoftLogo.png",
-    imgPath: `${base}img/metasoftFullLogo.svg`,
-    logoPath: `${base}img/metasoftLogo.png`,
+    imgPath: `${base}img/metasoftFullLogo.webp`,
+    logoPath: `${base}img/metasoftLogo.webp`,
     title: "Full STack Developer",
     date: "March 2023 - Present",
     responsibilities: [
@@ -310,7 +312,7 @@ const testimonials = [
   },
 
   {
-    name: "Aquin Davis",
+    name: "Aquin Devis",
     mentions: "@aquin",
     review:
       "Beffin was a pleasure to work with. He turned outdated website into a fresh, intuitive platform that’s both modern and easy to navigate. Fantastic work overall.",

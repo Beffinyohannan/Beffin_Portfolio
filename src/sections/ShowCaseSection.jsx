@@ -11,6 +11,10 @@ function ShowCaseSection() {
     const rydeRef = useRef(null);
     const libraryRef = useRef(null);
     const ycDirectoryRef = useRef(null);
+    const libraryRefMEA = useRef(null);
+    const ycDirectoryRefCH = useRef(null);
+    const libraryRefEC = useRef(null);
+    const ycDirectoryRefACH = useRef(null);
 
     useGSAP(() => {
         // Animation for the main section
@@ -21,7 +25,7 @@ function ShowCaseSection() {
         );
 
         // Animations for each app showcase
-        const cards = [rydeRef.current, libraryRef.current, ycDirectoryRef.current];
+        const cards = [rydeRef.current, libraryRef.current, ycDirectoryRef.current, libraryRefMEA.current, ycDirectoryRefCH.current, libraryRefEC.current, ycDirectoryRefACH.current];
 
         cards.forEach((card, index) => {
             gsap.fromTo(
@@ -34,10 +38,10 @@ function ShowCaseSection() {
                     y: 0,
                     opacity: 1,
                     duration: 1,
-                    delay: 0.3 * (index + 1),
+                    delay: 0.2 * (index + 1),
                     scrollTrigger: {
                         trigger: card,
-                        start: "top bottom-=100",
+                        start: "top bottom-=80",
                     },
                 }
             );
@@ -57,7 +61,7 @@ function ShowCaseSection() {
                             <div className="image-wrapper">
                                 {/* <img src="/images/project1.png" alt="Ryde App Interface" /> */}
                                 {/* <img src="/img/project01.jpg" alt="ZEEQR" /> */}
-                                <img src={`${import.meta.env.BASE_URL}img/project01.jpg`} alt="ZEEQR" />
+                                <img src={`${import.meta.env.BASE_URL}img/project01.webp`} alt="ZEEQR" />
                             </div>
                             <div className="text-content">
                                 <a href="https://zeeqr.com/" target="_blank" rel="noopener noreferrer">
@@ -81,7 +85,7 @@ function ShowCaseSection() {
                                     /> */}
                                     <img
                                         // src={`${import.meta.env.BASE_URL}images/project2.png`}
-                                        src={`${import.meta.env.BASE_URL}img/auction.png`}
+                                        src={`${import.meta.env.BASE_URL}img/auction.webp`}
                                         alt="Bharat Auction"
                                     />
                                 </div>
@@ -92,31 +96,35 @@ function ShowCaseSection() {
                                 <div className="image-wrapper bg-[#FFE7EB]">
                                     {/* <img src="/images/project3.png" alt="Hostec" /> */}
                                     {/* <img src={`${import.meta.env.BASE_URL}images/project3.png`} alt="Hostec" /> */}
-                                    <img src={`${import.meta.env.BASE_URL}img/survey.png`} alt="Hostec" />
+                                    <img src={`${import.meta.env.BASE_URL}img/survey.webp`} alt="Hostec" />
                                 </div>
                                 <h2>Hostec - Client survey and reporting system</h2>
                             </div>
                         </div>
 
+
+                    </div>
+                    <div className="showcaselayout mt-8">
+
                         <div className="project-list-wrapper overflow-hidden">
-                            <div className="project" ref={libraryRef}>
+                            <div className="project" ref={libraryRefMEA}>
                                 <div className="image-wrapper bg-[#FFEFDB]">
                                     {/* <img
                                         src="/img/realEstate.jpeg"
                                         alt="MEA International"
                                     /> */}
                                     <img
-                                        src={`${import.meta.env.BASE_URL}img/realEstate.jpeg`}
+                                        src={`${import.meta.env.BASE_URL}img/realEstate.webp`}
                                         alt="MEA International"
                                     />
                                 </div>
                                 <h2>MEA International - Real Estate Platform</h2>
                             </div>
 
-                            <div className="project" ref={ycDirectoryRef}>
+                            <div className="project" ref={ycDirectoryRefCH}>
                                 <div className="image-wrapper bg-[#FFE7EB]">
                                     {/* <img src="/img/church-website.png" alt="Community Website" /> */}
-                                    <img src={`${import.meta.env.BASE_URL}img/church-website.png`} alt="Community Website" />
+                                    <img src={`${import.meta.env.BASE_URL}img/church-website.webp`} alt="Community Website" />
                                 </div>
                                 <a href="https://www.kannarapalli.com/" target="_blank" rel="noopener noreferrer">
                                     <h2>Kannara church - Community Website</h2>
@@ -124,24 +132,24 @@ function ShowCaseSection() {
                             </div>
                         </div>
                         <div className="project-list-wrapper overflow-hidden">
-                            <div className="project" ref={libraryRef}>
+                            <div className="project" ref={libraryRefEC}>
                                 <div className="image-wrapper bg-[#FFEFDB]">
                                     {/* <img
                                         src="/img/airchip.png"
                                         alt="airchip"
                                     /> */}
                                     <img
-                                        src={`${import.meta.env.BASE_URL}img/airchip.png`}
+                                        src={`${import.meta.env.BASE_URL}img/airchip.webp`}
                                         alt="airchip"
                                     />
                                 </div>
                                 <h2>Airchip - An Ecommerce website that sells laptops</h2>
                             </div>
 
-                            <div className="project" ref={ycDirectoryRef}>
+                            <div className="project" ref={ycDirectoryRefACH}>
                                 <div className="image-wrapper bg-[#FFE7EB]">
                                     {/* <img src="/img/eventive.png" alt="eventive" /> */}
-                                    <img src={`${import.meta.env.BASE_URL}img/eventive.png`} alt="eventive" />
+                                    <img src={`${import.meta.env.BASE_URL}img/eventive.webp`} alt="eventive" />
                                 </div>
                                 <h2>Eventive - A event management application like social media</h2>
                             </div>
