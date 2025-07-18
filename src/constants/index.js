@@ -370,6 +370,104 @@ const socialImgs = [
   },
 ];
 
+ // Project data with enhanced information
+ const projectData = {
+  zeeqr: {
+      title: "ZEEQR - Digital Card Innovations",
+      description: "Eco-friendly Smart NFC & QR Card Platform",
+      fullDescription: "A comprehensive web application built with React.js, Zustand, Node.js, & TailwindCSS. ZEEQR revolutionizes digital networking by providing eco-friendly smart NFC and QR card solutions that eliminate the need for traditional paper business cards.",
+      status: "Live",
+      moreDetails: true,
+      liveUrl: "https://zeeqr.com/",
+      technologies: ["React.js", "Node.js","Express.js","MongoDB", "Zustand", "TailwindCSS","REST API","Google Oauth","Rapid API","Google Map API","Apple Wallet","Google Wallet"],
+      features: ["NFC Integration", "QR Code Generation", "Contact Management", "Analytics Dashboard"],
+      image: "/img/project01.webp",
+      contributions:[
+          "Implemented a digital card purchasing platform using React.js, Zustand, and Node.js, featuring a responsive UI and improving user flow efficiency by 35%.",
+          "Launched NFC/QR-enabled products (business cards, review cards, table talkers) to enable contactless digital interactions and reduce paper usage by over 40%.",
+          "Led cross-functional collaboration, user testing, and delivery within scope — aligning product design with customer needs and sustainability goals."
+      ]
+
+  },
+  bharatAuction: {
+      title: "Bharat Auction",
+      description: "Online Bidding Platform",
+      fullDescription: "A sophisticated online auction platform that enables users to participate in real-time bidding. Built with modern web technologies to ensure smooth and secure transactions.",
+      status: "Completed",
+      moreDetails: true,
+      liveUrl: null,
+      technologies: ["React.js", "Node.js", "Socket.io", "MongoDB","Express.js","Firebase Push Notification","REST API","Zustand"],
+      features: ["Real-time Bidding", "User Authentication", "Payment Integration", "Auction Management"],
+      image: "/img/auction.webp",
+      contributions:[
+          "Constructed a real-time online auction platform using React, Zustand, and Socket.IO, enabling live bidding with instant updates and Firebase push notifications.",
+          "Created reusable and efficient components for flexible product types and user-friendly forms, reducing code duplication by 40% and simplifying future updates.",
+          "Engineered a streamlined asset loading process, resulting in a 70% reduction in image bandwidth usage and a 25% boost in user satisfaction scores across all device types.",
+          "Managed project timelines and budgets, delivering within scope and deadlines."
+      ]
+  },
+  hostec: {
+      title: "Hostec",
+      description: "Client Survey and Reporting System",
+      fullDescription: "A comprehensive client survey and reporting system designed to streamline feedback collection and generate detailed analytics reports for better business insights.",
+      status: "In Progress",
+      moreDetails: true,
+      liveUrl: null,
+      technologies: ["React.js", "Express.js", "MonfoDB","Express.js", "Chart.js"],
+      features: ["Survey Builder", "Analytics Dashboard", "Report Generation", "Data Export"],
+      image: "/img/survey.webp",
+      contributions:[
+          "Designed a role-specific survey platform using React and Zustand, featuring adaptable questionnaires and a configurable question bank to support flexible survey building.",
+          "Programmed a graphical reporting system with point-based analysis and comparison against past surveys, enabling insightful performance tracking for clients.",
+          "A well optimized report graphically and point tables  according to the point gained by the client in the survey, also we can compare report with previous."
+      ]
+  },
+  meaInternational: {
+      title: "MEA International",
+      description: "Real Estate Platform",
+      fullDescription: "A modern real estate platform that connects buyers, sellers, and agents. Features advanced search capabilities, property management tools, and integrated communication systems.",
+      status: "In Progress",
+      moreDetails: true,
+      liveUrl: null,
+      technologies: ["React.js", "Node.js", "MongoDB", "Google Maps API"],
+      features: ["Property Listings", "Advanced Search", "Agent Portal", "Virtual Tours"],
+      image: "/img/realEstate.webp"
+  },
+  kannaraChurch: {
+      title: "Kannara Church",
+      description: "Community Website",
+      fullDescription: "A community-focused website for Kannara Church that serves as a central hub for congregation members to stay connected, access resources, and participate in community events.",
+      status: "Live",
+      moreDetails: false,
+      liveUrl: "https://www.kannarapalli.com/",
+      technologies: ["React.js", "Node.js", "CMS", "TailwindCSS"],
+      features: ["Event Management", "Member Directory", "Resource Library", "News Updates"],
+      image: "/img/church-website.webp"
+  },
+  airchip: {
+      title: "Airchip",
+      description: "Ecommerce Website for Laptops",
+      fullDescription: "A specialized ecommerce platform dedicated to laptop sales. Features comprehensive product catalogs, comparison tools, and streamlined checkout processes.",
+      status: "Completed",
+      moreDetails: false,
+      liveUrl: null,
+      technologies: ["React.js", "Node.js", "Stripe", "MongoDB"],
+      features: ["Product Catalog", "Shopping Cart", "Payment Processing", "Order Tracking"],
+      image: "/img/airchip.webp"
+  },
+  eventive: {
+      title: "Eventive",
+      description: "Event Management Social Platform",
+      fullDescription: "A social media-inspired event management application that allows users to create, discover, and participate in events while building communities around shared interests.",
+      status: "Completed",
+      moreDetails: false,
+      liveUrl: null,
+      technologies: ["React.js", "Node.js", "Socket.io", "MongoDB"],
+      features: ["Event Creation", "Social Features", "RSVP System", "Community Building"],
+      image: "/img/eventive.webp"
+  }
+};
+
 export {
   words,
   abilities,
@@ -383,4 +481,5 @@ export {
   techStackIcons,
   techStackImgs,
   navLinks,
+  projectData
 };
