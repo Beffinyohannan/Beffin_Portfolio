@@ -241,10 +241,10 @@ function Services() {
 
                 {/* Call to Action */}
                 <div className={`text-center mt-16 transition-all duration-1000 delay-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                    <div className="inline-flex items-center gap-4 bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-full px-8 py-4 hover:border-purple-500/50 transition-all duration-300 group">
+                    <div className="inline-flex items-center text-xs md:text-base gap-4 bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-full px-4 md:px-8 py-4 hover:border-purple-500/50 transition-all duration-300 group">
                         <span className="text-gray-300 group-hover:text-purple-300 transition-colors">Ready to start your project?</span>
                         <a href="#contact" >
-                            <button className="px-6 cursor-pointer py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium rounded-full hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300 transform hover:scale-105">
+                            <button className="px-3 md:px-6 cursor-pointer py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white  font-medium rounded-full hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300 transform hover:scale-105">
                                 Get In Touch
                             </button>
                         </a>
