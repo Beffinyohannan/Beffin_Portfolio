@@ -577,7 +577,7 @@
 
 // export default ShowCaseSection;
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -599,8 +599,66 @@ function ShowCaseSection() {
 
     const [selectedProject, setSelectedProject] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
-    // Add state to track which card is active on mobile
+    // Track which card is active/touched
     const [activeCard, setActiveCard] = useState(null);
+    // Track if device supports hover (desktop vs mobile)
+    const [isMobile, setIsMobile] = useState(false);
+
+    // Add CSS to disable hover on touch devices
+    useEffect(() => {
+        const style = document.createElement('style');
+        style.textContent = `
+            @media (hover: none) and (pointer: coarse) {
+                .hover-disabled:hover {
+                    background-color: initial !important;
+                    transform: initial !important;
+                }
+                .group-hover-disabled:hover .group-hover-target {
+                    opacity: 0 !important;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        return () => {
+            document.head.removeChild(style);
+        };
+    }, []);
+
+    useEffect(() => {
+        // Detect if device supports hover
+        const checkIsMobile = () => {
+            const hasHover = window.matchMedia('(hover: hover)').matches;
+            const hasCoarsePointer = window.matchMedia('(pointer: coarse)').matches;
+            const isSmallScreen = window.innerWidth <= 768;
+
+            setIsMobile(!hasHover || hasCoarsePointer || isSmallScreen);
+        };
+
+        checkIsMobile();
+        window.addEventListener('resize', checkIsMobile);
+
+        return () => {
+            window.removeEventListener('resize', checkIsMobile);
+        };
+    }, []);
+
+    // Close active card on scroll (mobile only)
+    useEffect(() => {
+        if (!isMobile) return;
+
+        const handleScroll = () => {
+            if (activeCard) {
+                setActiveCard(null);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [activeCard, isMobile]);
 
     const openModal = (projectKey) => {
         setSelectedProject(projectData[projectKey]);
@@ -657,97 +715,110 @@ function ShowCaseSection() {
         });
     }, []);
 
-    // Handle card interactions for both desktop and mobile
-    const handleCardInteraction = (projectKey) => {
-        // On mobile, toggle the overlay, on desktop, this won't be called
-        if (window.innerWidth <= 768) {
+    // Handle card touch/click
+    const handleCardTouch = (projectKey) => {
+        if (isMobile) {
             setActiveCard(activeCard === projectKey ? null : projectKey);
         }
     };
 
-    // Handle clicking outside to close mobile overlay
-    const handleCardClick = (e, projectKey) => {
-        if (window.innerWidth <= 768 && activeCard !== projectKey) {
-            e.preventDefault();
-            setActiveCard(projectKey);
-        }
+    // Close active card when clicking outside
+    const handleClickOutside = () => {
+        setActiveCard(null);
     };
 
-    const ProjectCard = ({ project, onClick, children, className = "", projectKey }) => (
-        <div
-            className={`group cursor-pointer ${className}`}
-            onClick={(e) => handleCardClick(e, projectKey)}
-        >
-            <div className="relative overflow-hidden rounded-lg">
-                {children}
-                {/* Hover/Active Overlay - Modified for mobile support */}
-                <div className={`absolute inset-0 bg-black/70 transition-opacity duration-300 flex flex-col justify-center items-center p-4 ${
-                    // Show overlay on hover for desktop OR when active on mobile
-                    window.innerWidth > 768
-                        ? 'opacity-0 group-hover:opacity-100'
-                        : activeCard === projectKey
-                            ? 'opacity-100'
-                            : 'opacity-0'
-                    }`}>
-                    <div className={`px-3 py-1 rounded-full text-sm font-semibold text-white mb-4 ${getStatusColor(project.status)}`}>
-                        {project.status}
-                    </div>
-                    <div className="flex justify-center flex-col sm:flex-row gap-2 w-full max-w-xs">
-                        {project.liveUrl && (
-                            <a
-                                href={project.liveUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors duration-200 text-sm"
-                                onClick={(e) => e.stopPropagation()}
-                            >
-                                <ExternalLink size={16} />
-                                Live Site
-                            </a>
-                        )}
-                        {project.moreDetails &&
+    const ProjectCard = ({ project, onClick, children, className = "", projectKey }) => {
+        const isActive = activeCard === projectKey;
+
+        return (
+            <div
+                className={`cursor-pointer ${className} ${!isMobile ? 'group' : 'group-hover-disabled'}`}
+                onClick={() => handleCardTouch(projectKey)}
+            >
+                <div className="relative overflow-hidden rounded-lg">
+                    {children}
+
+                    {/* Overlay - Hover on desktop only, click/tap on mobile */}
+                    <div className={`
+                        absolute inset-0 bg-black/70 transition-all duration-300 
+                        flex flex-col justify-center items-center p-4
+                        opacity-0 group-hover:opacity-100 group-hover-target
+                        
+                        ${isMobile && isActive ? '!opacity-100' : ''}
+                    `}>
+                        {/* Status Badge */}
+                        <div className={`px-3 py-1 rounded-full text-sm font-semibold text-white mb-4 ${getStatusColor(project.status)}`}>
+                            {project.status}
+                        </div>
+
+                        {/* Action Buttons */}
+                        <div className="flex justify-center flex-col sm:flex-row gap-2 w-full max-w-xs">
+                            {project.liveUrl && (
+                                <a
+                                    href={project.liveUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center justify-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg transition-all duration-200 text-sm hover:bg-blue-700 hover:scale-105 active:bg-blue-800 active:scale-95 touch-manipulation hover-disabled"
+                                    onClick={(e) => e.stopPropagation()}
+                                >
+                                    <ExternalLink size={16} />
+                                    Live Site
+                                </a>
+                            )}
+                            {project.moreDetails && (
+                                <button
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        onClick();
+                                    }}
+                                    className="flex items-center justify-center gap-2 bg-purple-600 text-white px-4 py-2 rounded-lg transition-all duration-200 text-sm hover:bg-purple-700 hover:scale-105 active:bg-purple-800 active:scale-95 touch-manipulation hover-disabled"
+                                >
+                                    <Info size={16} />
+                                    More Details
+                                </button>
+                            )}
+                        </div>
+
+                        {/* Close button - show on mobile when card is active */}
+                        {/* {isMobile && isActive && (
                             <button
                                 onClick={(e) => {
                                     e.stopPropagation();
-                                    onClick();
+                                    setActiveCard(null);
                                 }}
-                                className="flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-colors duration-200 text-sm cursor-pointer"
+                                className="absolute top-2 right-2 text-white bg-black/50 rounded-full p-1 transition-colors active:bg-black/70"
                             >
-                                <Info size={16} />
-                                More Details
+                                <X size={20} />
                             </button>
-                        }
+                        )} */}
                     </div>
-                    {/* Close button for mobile */}
-                    {window.innerWidth <= 768 && (
-                        <button
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                setActiveCard(null);
-                            }}
-                            className="absolute top-2 right-2 text-white hover:text-gray-300 bg-black/50 rounded-full p-1"
-                        >
-                            <X size={20} />
-                        </button>
-                    )}
+                </div>
+
+                {/* Project Info Outside */}
+                <div className="mt-3 space-y-1">
+                    <h3 className="text-white text-lg font-bold line-clamp-1">{project.title}</h3>
+                    <p className="text-white/70 text-sm line-clamp-1">{project.description}</p>
                 </div>
             </div>
-            {/* Project Info Outside */}
-            <div className="mt-3 space-y-1">
-                <h3 className="text-white text-lg font-bold line-clamp-1">{project.title}</h3>
-                <p className="text-white/70 text-sm line-clamp-1">{project.description}</p>
-            </div>
-        </div>
-    );
+        );
+    };
 
     return (
         <div id="work" ref={sectionRef} className="app-showcase min-h-screen py-20">
+            {/* Click outside overlay to close active card - only on mobile */}
+            {isMobile && activeCard && (
+                <div
+                    className="fixed inset-0 z-20"
+                    onClick={handleClickOutside}
+                />
+            )}
+
             <div className="w-full h-full md:px-20 px-5">
                 <TitleHeader
                     title="Project Worked On"
                     sub="Recent projects"
                 />
-                <div className="w-full mt-20">
+                <div className="w-full mt-20 relative z-30">
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                         {/* Main Featured Project */}
                         <ProjectCard
@@ -857,14 +928,6 @@ function ShowCaseSection() {
                     </div>
                 </div>
             </div>
-
-            {/* Click outside handler for mobile */}
-            {activeCard && (
-                <div
-                    className="fixed inset-0 z-30 md:hidden"
-                    onClick={() => setActiveCard(null)}
-                />
-            )}
 
             {/* Modal */}
             {isModalOpen && selectedProject && (
